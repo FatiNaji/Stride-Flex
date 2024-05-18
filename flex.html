@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stride Flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            color: gray;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: skyblue;
+            color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: whitesmoke;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        nav a:hover {
+            border-color: whitesmoke;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: pink;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .product {
+            
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product img {
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: gray;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            color: blueviolet;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="tel"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid whitesmoke;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: gray;
+        }
+
+        footer {
+            background-color: black;
+            color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+
+        @media screen and (max-width: 767px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .product {
+                flex: 1 1 calc(50% - 20px); 
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product {
+                flex: 1 1 calc(100% - 20px); 
+            }
+        }
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./imagenes/logo.png" width="100" height="100" alt="Logo Stride Flex">
+        <h1>Stride Flex</h1>
+        <p>Las Mejores Zapatillas</p>
+        <nav>
+            <a href="#Mamá">Sorprende a Mamá</a>
+            <a href="#hombres">Hombres</a>
+            <a href="#mujeres">Mujeres</a>
+            <a href="#niños">Niños</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#registro">Registro</a>
+        </nav>
+    </header>
+    <div class="content">
+        <section id="Mamá">
+            <h2>Sorprende a Mamá</h2>
+            <div class="image-grid">
+                <div class="product">
+                    <img src="./imagenes/Feliz dia mama.jpg" width="200" height="200" alt="Zapatillas para Mamá">
+                    <p>Precio: $120</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/MAMA.png" width="200" height="200" alt="Zapatillas para Mamá">
+                    <p>Precio: $150</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/Mmai.png" width="200" height="200" alt="Zapatillas para Mamá">
+                    <p>Precio: $180</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/mon.png" width="200" height="200" alt="Zapatillas para Mamá">
+                    <p>Precio: $140</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/mom.jpg" width="200" height="200" alt="Zapatillas para Mamá">
+                    <p>Precio: $150</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/sorprende.jpg" width="200" height="200" alt="Zapatillas para Mamá">
+                    <p>Precio: $170</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hombres">
+            <h2>Zapatillas para Hombres</h2>
+            <div class="image-grid">
+                <div class="product">
+                    <img src="./imagenes/HOMBRE 1.jpg" width="200" height="200" alt="Zapatillas para Hombres">
+                    <p>Precio: $120</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/HOMBRE 2.jpg" width="200" height="200" alt="Zapatillas para Hombres">
+                    <p>Precio: $150</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/HOMBRE 3.jpg" width="200" height="200" alt="Zapatillas para Hombres">
+                    <p>Precio: $180</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mujeres">
+            <h2>Zapatillas para Mujeres</h2>
+            <div class="image-grid">
+                <div class="product">
+                    <img src="./imagenes/MUJER 1.png" width="200" height="200" alt="Zapatillas para Mujeres">
+                    <p>Precio: $100</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/MUJER 2.png" width="200" height="200" alt="Zapatillas para Mujeres">
+                    <p>Precio: $130</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/MUJER 3.jpg" width="200" height="200" alt="Zapatillas para Mujeres">
+                    <p>Precio: $160</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="niños">
+            <h2>Zapatillas para Niños</h2>
+            <div class="image-grid">
+                <div class="product">
+                    <img src="./imagenes/niños 1.jpg" width="200" height="200" alt="Zapatillas para Niños">
+                    <p>Precio: $80</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/niños 2.jpg" width="200" height="200" alt="Zapatillas para Niños">
+                    <p>Precio: $90</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/niños 3.jpg" width="200" height="200" alt="Zapatillas para Niños">
+                    <p>Precio: $100</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Bebes">
+            <h2>Zapatillas para Bebes</h2>
+            <div class="image-grid">
+                <div class="product">
+                    <img src="./imagenes/bebes 1.jpg" width="200" height="200" alt="Zapatillas para Bebes">
+                    <p>Precio: $60</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/bebes 2.jpg" width="200" height="200" alt="Zapatillas para Bebes">
+                    <p>Precio: $50</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/bebes 3.jpg" width="200" height="200" alt="Zapatillas para Bebes">
+                    <p>Precio: $70</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ofertas">
+            <h2>Ofertas Especiales</h2>
+            <div class="image-grid">
+                <div class="product">
+                    <img src="./imagenes/oferta.jpg" width="200" height="200" alt="Ofertas Especiales">
+                    <p>Precio: $70</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/oferta 2.png" width="200" height="200" alt="Ofertas Especiales">
+                    <p>Precio: $60</p>
+                </div>
+                <div class="product">
+                    <img src="./imagenes/oferta 3.jpg" width="200" height="200" alt="Ofertas Especiales">
+                    <p>Precio: $50</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="enviar.php" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <section id="registro">
+            <h2>Registro</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+    </div>
+
+    <div id="cart" class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items" class="cart-items">
+            <!-- Los elementos del carrito se agregarán aquí dinámicamente -->
+        </ul>
+        <div class="cart-total">
+            <strong>Total:</strong> <span id="cart-total">$0.00</span>
+        </div>
+        <button id="checkout-btn" class="checkout-btn">Pagar</button>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.querySelector('#Mamá .image-grid');
+            const images = grid.getElementsByTagName('img');
+        
+            let currentImageIndex = 0;
+
+            function slideShow() {
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style.opacity = 0;
+                }
+                images[currentImageIndex].style.opacity = 1;
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+            slideShow();
+            setInterval(slideShow, 3000);
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Stride Flex. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        
+        const productos = [
+            "Zapatillas para Mamá",
+            "Zapatillas para Hombres",
+            "Zapatillas para Mujeres",
+            "Zapatillas para Niños",
+            "Zapatillas para Bebes",
+            "Ofertas Especiales"
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        function updateSearchResults() {
+            const searchTerm = searchInput.value.toLowerCase();
+            searchResults.innerHTML = '';
+
+            const filteredProducts = productos.filter(producto => {
+                return producto.toLowerCase().includes(searchTerm);
+            });
+
+            filteredProducts.forEach(producto => {
+                const resultItem = document.createElement('div');
+                resultItem.textContent = producto;
+                searchResults.appendChild(resultItem);
+            });
+        }
+        searchInput.addEventListener('input', updateSearchResults);
+    </script>
+</body>
+</html>
+
+
